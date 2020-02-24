@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C50C76C9-2E16-4F90-8860-3305518417DD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LepiX.Core</RootNamespace>
+    <AssemblyName>LepiX</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibrary">
+      <HintPath>bin\Debug\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuxiliaryFunctions.cs" />
+    <Compile Include="AuxiliaryMethods.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="RandomGenerators\BirthtimeGenerator.cs" />
+    <Compile Include="RandomGenerators\Generator.cs" />
+    <Compile Include="RandomGenerators\PollenAirGenerator.cs" />
+    <Compile Include="RandomGenerators\PollenLeafGenerator.cs" />
+    <Compile Include="RUN.cs" />
+    <Compile Include="CSV.cs" />
+    <Compile Include="ExceptionClasses.cs" />
+    <Compile Include="Individual.cs" />
+    <Compile Include="InputData.cs" />
+    <Compile Include="LHS.cs" />
+    <Compile Include="ModelParameters.cs" />
+    <Compile Include="Mortality.cs" />
+    <Compile Include="PollenDepositionSampled.cs" />
+    <Compile Include="LepiXModel.cs" />
+    <Compile Include="Population.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random.cs" />
+    <Compile Include="ScenarioParameters.cs" />
+    <Compile Include="Simulation.cs" />
+    <Compile Include="SSD.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Scenario.cs" />
+    <Compile Include="TwoIntervalCalculator.cs" />
+    <Compile Include="Weather.cs" />
+    <Compile Include="XmlData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CallingRScripts\LepiX.CallingRScripts.csproj">
+      <Project>{e806bf2b-791f-4243-b150-501f0dcb50d5}</Project>
+      <Name>LepiX.CallingRScripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InputParameters\LepiX.InputParameters.csproj">
+      <Project>{fac0344d-5f49-4642-ba27-66192d1c6309}</Project>
+      <Name>LepiX.InputParameters</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
