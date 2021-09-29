@@ -4,7 +4,8 @@
 //================================================================
 using System;
 using System.Collections.Generic;
-
+using System.Globalization;
+using System.IO;
 using ComLib;
 using ComLib.CsvParse;
 
@@ -119,6 +120,36 @@ namespace LepiX.Core
         //    Csv.Write(exportName, dataList, ",", cols, true, false, "", Environment.NewLine, true);
 
         //}
+
+        public static void ExportArrayBig(double[,] multiArray, List<string> header, string exportName)
+        {
+
+            StreamWriter streamWriter = new StreamWriter(exportName);
+
+            string headerStr = string.Empty;
+            for (int i = 0; i < header.Count; i++)
+            {
+                headerStr += header[i] + ',';
+            }
+            headerStr.Remove(headerStr.Length - 1);
+
+            
+            streamWriter.WriteLine(headerStr);
+
+            for (int i = 0; i < multiArray.GetLength(0); i++)
+            {
+
+                for (int v = 0; v < multiArray.GetLength(1) - 1; v++)
+                {
+                    streamWriter.Write(multiArray[i, v].ToString(CultureInfo.InvariantCulture) +
+                                       ",");
+                }
+                streamWriter.WriteLine(multiArray[i, multiArray.GetLength(1) - 1].ToString(CultureInfo.InvariantCulture));
+            }
+
+            streamWriter.Close();
+
+        }
 
 
         //------------------------------------------------------------

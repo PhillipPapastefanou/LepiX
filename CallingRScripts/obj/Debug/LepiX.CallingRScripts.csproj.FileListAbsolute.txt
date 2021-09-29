@@ -135,3 +135,16 @@ F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\CallingRScripts\obj\Deb
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\CallingRScripts\obj\Debug\LepiX.CallingRScripts.csproj.CopyComplete
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\CallingRScripts\obj\Debug\LepiX.CallingRScripts.dll
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\CallingRScripts\obj\Debug\LepiX.CallingRScripts.pdb
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\LepiX.CallingRScripts.dll
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\LepiX.CallingRScripts.pdb
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\DynamicInterop.dll
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\RDotNet.dll
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\RDotNet.NativeLibrary.dll
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\DynamicInterop.xml
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\RDotNet.xml
+F:\SourceTreeRepos\LepiX\CallingRScripts\bin\Debug\RDotNet.NativeLibrary.xml
+F:\SourceTreeRepos\LepiX\CallingRScripts\obj\Debug\LepiX.CallingRScripts.csproj.CoreCompileInputs.cache
+F:\SourceTreeRepos\LepiX\CallingRScripts\obj\Debug\LepiX.CallingRScripts.csproj.CopyComplete
+F:\SourceTreeRepos\LepiX\CallingRScripts\obj\Debug\LepiX.CallingRScripts.dll
+F:\SourceTreeRepos\LepiX\CallingRScripts\obj\Debug\LepiX.CallingRScripts.pdb
+F:\SourceTreeRepos\LepiX\CallingRScripts\obj\Debug\LepiX.CallingRScripts.csproj.AssemblyReference.cache

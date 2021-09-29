@@ -4,17 +4,17 @@
   <description asmv2:publisher="LepiX.PropertyGrid" asmv2:product="LepiX.PropertyGrid" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LepiX.PropertyGrid.exe.manifest" size="11393">
+    <dependentAssembly dependencyType="install" codebase="LepiX.PropertyGrid.exe.manifest" size="11389">
       <assemblyIdentity name="LepiX.PropertyGrid.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FyzTXg0rJG1SQAvoI+67YbvqFwWVxpcdzkKD6Ny8/MI=</dsig:DigestValue>
+        <dsig:DigestValue>ynzr8Pi7vqNX2wa0yZRmQxO8fpx8rhBUwj5t7NjtlwE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

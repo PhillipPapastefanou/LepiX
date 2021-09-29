@@ -50,10 +50,6 @@ namespace LepiX.Core
         { get { return totalSheddingData;}}
 
         //------------------------------------------------------------
-        // GetFunctions
-        //------------------------------------------------------------
-
-        //------------------------------------------------------------
         // Model constructor 
         //------------------------------------------------------------
         public Statistics(int pID):base(pID)
@@ -70,19 +66,19 @@ namespace LepiX.Core
 
         public override void Input()
         {
-            weatherID = weather.WeatherID();
+            weatherID = weather.WeatherID;
 
-            offsetID = pollenDepositionSampled.OffsetID();
-            totalAirAmountID = pollenDepositionSampled.TotalAirAmount();
-            distributionID = pollenDepositionSampled.DistributionID();
+            offsetID = pollenDepositionSampled.OffsetID;
+            totalAirAmountID = pollenDepositionSampled.TotalAirAmount;
+            distributionID = pollenDepositionSampled.DistributionID;
             totalIndividualAmount = mortality.TotalExposedAmount / modelParameters.General.NumberOfIndividuals;
 
             individuals = population.Individuals();
 
-            totalEstimatedExpositionAmount = mortality.TotalEstimatedExpositionAmount();
-            mortalityPerPopulation = mortality.MortalityPerPopulation();
+            totalEstimatedExpositionAmount = mortality.TotalEstimatedExpositionAmount;
+            mortalityPerPopulation = mortality.MortalityPerPopulation;
 
-            totalSheddingData = pollenDepositionSampled.RandomYearDeposition();
+            totalSheddingData = pollenDepositionSampled.RandomYearDeposition;
         }
 
         public override void Update()

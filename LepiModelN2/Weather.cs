@@ -18,10 +18,10 @@ namespace LepiX.Core
         double[] randomYearWeather;
 
         //------------------------------------------------------------
-        // GetFunctions
+        // Properties
         //------------------------------------------------------------
-        public double[] RandomYearWeather() { return randomYearWeather; }
-        public int WeatherID() { return weatherID; }
+        public double[] RandomYearWeather {get{ return randomYearWeather; }}
+        public int WeatherID {get{ return weatherID; }}
 
 
         //------------------------------------------------------------

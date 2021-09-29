@@ -23,18 +23,18 @@ namespace LepiX.PropertyGrid
 
             bool rIsInstalledAndWorking;
 
-            try
-            {
-                ScriptEngine.Setup();
-                rIsInstalledAndWorking = true;
-            }
+            //try
+            //{
+            //    ScriptEngine.Setup();
+            //    rIsInstalledAndWorking = true;
+            //}
 
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                rIsInstalledAndWorking = false;
-            }
-
+            //catch (Exception exception)
+            //{
+            //    MessageBox.Show(exception.Message);
+            //    rIsInstalledAndWorking = false;
+            //}
+            rIsInstalledAndWorking = false;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

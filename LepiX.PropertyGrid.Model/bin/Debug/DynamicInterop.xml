@@ -39,9 +39,95 @@
             <param name="lpProcName">The name of the function sought</param>
             <returns>Handle to the native function</returns>
         </member>
+        <member name="T:DynamicInterop.INativeHandle">
+            <summary> Interface for native handle.</summary>
+            <remarks>This is similar in intent to the BCL SafeHandle, but with release 
+                     behaviors that are more desirable in particular circumstances.
+                     </remarks>
+        </member>
+        <member name="M:DynamicInterop.INativeHandle.GetHandle">
+             <summary> Returns the value of the handle.</summary>
+            
+             <returns> The handle.</returns>
+        </member>
+        <member name="M:DynamicInterop.INativeHandle.AddRef">
+            <summary>Manually increments the reference counter</summary>
+        </member>
+        <member name="M:DynamicInterop.INativeHandle.Release">
+            <summary>Manually decrements the reference counter. Triggers disposal if count reaches is zero.</summary>
+        </member>
+        <member name="T:DynamicInterop.NativeHandle">
+            <summary> A stub implementation for the INativeHandle interface </summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.#ctor(System.IntPtr,System.Int32)">
+             <summary> Specialised constructor for use only by derived class.</summary>
+            
+             <param name="pointer">         The handle, value of the pointer to the native object</param>
+             <param name="currentRefCount"> (Optional) Number of pre-existing references for the native object</param>
+             <remarks>If a native object was created prior to its use by .NET, its lifetime may need to extend its use 
+                      from .NET. In practice the scenario is unlikely</remarks>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.#ctor">
+            <summary> Specialised default constructor for use only by derived class. 
+                      Defers setting the handle to the derived class</summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.SetHandle(System.IntPtr,System.Int32)">
+             <summary> Sets a handle.</summary>
+            
+             <exception cref="T:System.ArgumentException"> Thrown when a pointer is a Zero pointer
+                                                  .</exception>
+            
+             <param name="pointer">         The handle, value of the pointer to the native object</param>
+             <param name="currentRefCount"> (Optional) Number of pre-existing references for the native object</param>
+             <remarks>If a native object was created prior to its use by .NET, its lifetime may need to extend its use 
+                      from .NET. In practice the scenario is unlikely</remarks>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.Finalize">
+            <summary> Finaliser. Triggers the disposal of this object if not manually done.</summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.ReleaseHandle">
+             <summary> Releases the native resource for this handle.</summary>
+            
+             <returns> True if it succeeds, false if it fails.</returns>
+        </member>
+        <member name="P:DynamicInterop.NativeHandle.ReferenceCount">
+             <summary> Gets the number of references to the native resource for this handle.</summary>
+            
+             <value> The number of references.</value>
+        </member>
+        <member name="P:DynamicInterop.NativeHandle.Disposed">
+             <summary> Gets a value indicating whether this handle has been disposed of already</summary>
+            
+             <value> True if disposed, false if not.</value>
+        </member>
+        <member name="F:DynamicInterop.NativeHandle.handle">
+            <summary> The handle to the native resource.</summary>
+        </member>
+        <member name="P:DynamicInterop.NativeHandle.IsInvalid">
+            <summary> Gets a value indicating whether this handle is invalid.</summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.Dispose">
+            <summary> If the reference counts allows it, release the resource refered to by this handle.</summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.GetHandle">
+             <summary> Returns the value of the handle.</summary>
+            
+             <returns> The handle.</returns>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.AddRef">
+            <summary> Manually increments the reference counter.</summary>
+        </member>
+        <member name="M:DynamicInterop.NativeHandle.Release">
+            <summary> Manually decrements the reference counter. Triggers disposal if count reaches is zero.</summary>
+        </member>
         <member name="T:DynamicInterop.PlatformUtility">
             <summary>
             Helper class with functions whose behavior may be depending on the platform 
+            </summary>
+        </member>
+        <member name="P:DynamicInterop.PlatformUtility.IsUnix">
+            <summary>
+            Is the platform unix-like (Unix or MacOX)
             </summary>
         </member>
         <member name="M:DynamicInterop.PlatformUtility.GetPlatform">
@@ -86,10 +172,26 @@
             <param name="dllName">short file name.</param>
             <param name="directories">Directories in which to search for matching file names</param>
         </member>
-        <member name="P:DynamicInterop.PlatformUtility.IsUnix">
-            <summary>
-            Is the platform unix-like (Unix or MacOX)
-            </summary>
+        <member name="M:DynamicInterop.PlatformUtility.FindFirstFullPath(System.String,System.String,System.String)">
+             <summary> Given a DLL short file name, short or otherwise, searches for the first full path.</summary>
+            
+             <exception cref="T:System.DllNotFoundException"> Thrown when a DLL Not Found error condition occurs.</exception>
+            
+             <param name="nativeLibFilename"> Filename of the native library file.</param>
+             <param name="libname">           (Optional) human-readable name of the library.</param>
+             <param name="envVarName">        (Optional)
+                                              Environment variable to use for search path(s) - 
+                                              defaults according to platform to PATH or LD_LIBRARY_PATH if empty.</param>
+             <returns> The found full path.</returns>
+        </member>
+        <member name="M:DynamicInterop.PlatformUtility.CreateLibraryFileName(System.String)">
+             <summary> Given the stub name for a library get the likely platform specific file name</summary>
+            
+             <exception cref="T:System.ArgumentNullException"> Thrown when one or more required arguments are null.</exception>
+            
+             <param name="libraryName"> Name of the library.</param>
+            
+             <returns> The likely file name for the shared library.</returns>
         </member>
         <member name="M:DynamicInterop.SafeHandleUnmanagedDll.ReleaseHandle">
             <summary>
@@ -126,6 +228,11 @@
             Creates a proxy for the specified dll.
             </summary>
             <param name="dllName">The DLL's name.</param>
+        </member>
+        <member name="P:DynamicInterop.UnmanagedDll.Filename">
+            <summary>
+            Gets the Dll file name used for this native Dll wrapper.
+            </summary>
         </member>
         <member name="M:DynamicInterop.UnmanagedDll.GetFunction``1">
             <summary>
@@ -243,11 +350,6 @@
             <returns>The value for this symbol, read as an ANSI string</returns>
             <param name="symbolName">Symbol name.</param>
             <remarks>Throws an <exception cref="T:System.ArgumentException">ArgumentException</exception> if the symbol is not exported by the library</remarks>
-        </member>
-        <member name="P:DynamicInterop.UnmanagedDll.Filename">
-            <summary>
-            Gets the Dll file name used for this native Dll wrapper.
-            </summary>
         </member>
     </members>
 </doc>

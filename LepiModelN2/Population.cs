@@ -66,7 +66,7 @@ namespace LepiX.Core
 
         public override void Input()
         {
-            weatherData = weather.RandomYearWeather();
+            weatherData = weather.RandomYearWeather;
         }
 
         public override void Update()

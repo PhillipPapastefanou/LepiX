@@ -44,10 +44,10 @@ namespace LepiX.Core
 
 
         //------------------------------------------------------------
-        // GetFunctions
+        //  Properties
         //------------------------------------------------------------
-        public double[] TotalEstimatedExpositionAmount() { return totalEstimatedExpositionAmount; }
-        public double[][] MortalityPerPopulation() { return mortalityPerPopulation; }
+        public double[] TotalEstimatedExpositionAmount { get { return totalEstimatedExpositionAmount; }}
+        public double[][] MortalityPerPopulation { get { return mortalityPerPopulation; }}
 
         public double TotalExposedAmount
         {
@@ -91,7 +91,7 @@ namespace LepiX.Core
 
         public override void Input()
         {
-            depositionData = pollenDepositionSampled.RandomYearDeposition(); 
+            depositionData = pollenDepositionSampled.RandomYearDeposition; 
         }
 
         public override void Update()

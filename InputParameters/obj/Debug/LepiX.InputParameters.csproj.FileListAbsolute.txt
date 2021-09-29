@@ -74,3 +74,16 @@ F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\InputParameters\obj\Deb
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\InputParameters\obj\Debug\LepiX.InputParameters.dll
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\InputParameters\obj\Debug\LepiX.InputParameters.pdb
 F:\Simulationen\LepiX\Lepix-Cry1F-2018-11\LepiModel2016g\InputParameters\obj\Debug\LepiX.InputParameters.csprojAssemblyReference.cache
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\LepiX.InputParameters.dll
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\LepiX.InputParameters.pdb
+F:\SourceTreeRepos\LepiX\InputParameters\obj\Debug\LepiX.InputParameters.csproj.CoreCompileInputs.cache
+F:\SourceTreeRepos\LepiX\InputParameters\obj\Debug\LepiX.InputParameters.dll
+F:\SourceTreeRepos\LepiX\InputParameters\obj\Debug\LepiX.InputParameters.pdb
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\DynamicInterop.dll
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\RDotNet.dll
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\RDotNet.NativeLibrary.dll
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\DynamicInterop.xml
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\RDotNet.xml
+F:\SourceTreeRepos\LepiX\InputParameters\bin\Debug\RDotNet.NativeLibrary.xml
+F:\SourceTreeRepos\LepiX\InputParameters\obj\Debug\LepiX.InputParameters.csproj.CopyComplete
+F:\SourceTreeRepos\LepiX\InputParameters\obj\Debug\LepiX.InputParameters.csproj.AssemblyReference.cache

@@ -57,7 +57,10 @@ namespace LepiX.Core
 
                 component.Output();
             }
+        }
 
+        public void Dispose()
+        {
             foreach (Component component in components)
             {
                 component.Dispose();

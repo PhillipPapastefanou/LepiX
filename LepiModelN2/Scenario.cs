@@ -130,6 +130,7 @@ namespace LepiX.Core
             } 
         }
 
+
         //------------------------------------------------------------
         // Finalise Method 
         //------------------------------------------------------------
@@ -227,12 +228,50 @@ namespace LepiX.Core
             List<string> headerS = new List<string>() { "Shedded Pollen (Pollen/cm^2)" };
             CSV.ExportArray(totalSheddingData, headerS, "Output" + "/" + outputLocation + "/" + distanceToMaizeFieldStringFolder + "/" + exposureThresholdDaysStringFolder + "/" + "TotalSheddingData.csv");
 
-            
+
+            List<string> headerTotalMortalityData = new List<string>() { "PID", "IID", };
+
+            for (int i = 0; i < modelParameters.DoseResponseGeneral.LD50ClassValues.Length; i++)
+            {
+                headerTotalMortalityData.Add("Class" + i.ToString());
+            }
+
+
+            double[,] allMortData = new double[modelParameters.General.NumberOfPopulations * modelParameters.General.NumberOfIndividuals,
+                modelParameters.DoseResponseGeneral.LD50ClassValues.Length + 2];
+
+            for (int p = 0; p < modelParameters.General.NumberOfPopulations; p++)
+            {
+                Mortality mort = mortality[p];
+
+                double[][] mortData = mort.MortalityPerPopulation;
+
+                for (int i = 0; i < modelParameters.General.NumberOfIndividuals; i++)
+                {
+                    allMortData[p * modelParameters.General.NumberOfIndividuals + i, 0] = p;
+                    allMortData[p * modelParameters.General.NumberOfIndividuals + i, 1] = i;
+
+                    for (int j = 0; j < modelParameters.DoseResponseGeneral.LD50ClassValues.Length; j++)
+                    {
+                        allMortData[p * modelParameters.General.NumberOfIndividuals + i, j + 2] = mortData[i][j];
+                    }
+                }
+                
+            }
+
+            CSV.ExportArrayBig(allMortData, headerTotalMortalityData, "Output" + "/" + outputLocation + "/" + distanceToMaizeFieldStringFolder + "/" + exposureThresholdDaysStringFolder + "/" + "FullMortalityOutput.csv");
+           
+
 
         }
 
         public void Dispose()
         {
+            foreach (RUN run in RUNs)
+            {
+                run.Dispose();
+            }
+
             weather = null;
             pollenDepo = null;
             population = null;
@@ -240,6 +279,8 @@ namespace LepiX.Core
             statistics = null;
 
             RUNs = null;
+
+
 
             Debug.WriteLine("Current RAM-usage: {0} mb", GC.GetTotalMemory(false) / 1024 / 1024);
         }

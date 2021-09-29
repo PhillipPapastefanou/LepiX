@@ -29,8 +29,6 @@ namespace LepiX.Core
             this.expositionDays = modelParameters.Exposition.ExpositionDays;
             this.outputLocation = modelParameters.General.OutputLocation;
 
-
-
             Console.WriteLine("Number of distances: {0}", distances.Length);
             Console.WriteLine("Total number of scenarios to calculate: {0}", distances.Length);
 
@@ -59,12 +57,9 @@ namespace LepiX.Core
             for (int i = 0; i < scenariolParametersList.Count; i++)
             {
                 scenarios.Add(new Scenario(modelParameters, scenariolParametersList[i]));
-
-                //Console.SetCursorPosition(0, Console.CursorTop);
                 Console.Write("Initialising scenario number: {0}", i + 1);
             }
 
-           // Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write("Initialising scenarios: Done!");
             Console.WriteLine();
         }

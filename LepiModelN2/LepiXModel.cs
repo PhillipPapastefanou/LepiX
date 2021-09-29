@@ -9,22 +9,15 @@ namespace LepiX.Core
     {
         static void Main(string[] args)
         {
-
-
-
             Run();
-
-
-       }
+        }
 
         public static void Run()
-        {
+        {            
             ScriptEngine.Setup();
 
             Console.WriteLine("Starting Lepi-Model...");
-            string configFileName = "InputParameters.xml";
-
-            
+            string configFileName = "InputParameters.xml";                
 
 
             Console.WriteLine("Loading UserParameters...");
@@ -59,10 +52,7 @@ namespace LepiX.Core
             Console.WriteLine("================================================================");
             Console.WriteLine("Total simulation time: {0}" + stopwatch.ElapsedMilliseconds);
 
-
-
             //modelParameters.WriteParametersToXML("Test.xml");
-
 
             //------------------------------------------------------------
             // Going for post-processing
@@ -80,7 +70,6 @@ namespace LepiX.Core
                 Console.WriteLine("");
                 Console.ReadKey();
             }
-
 
             ScriptEngine.Dispose();
         }

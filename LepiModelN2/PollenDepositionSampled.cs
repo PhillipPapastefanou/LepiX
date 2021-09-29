@@ -37,12 +37,12 @@ namespace LepiX.Core
         bool includeVariabilityOfAirPollen;
 
         //------------------------------------------------------------
-        // Get Functions
+        // Properties
         //------------------------------------------------------------
-        public double[] RandomYearDeposition() { return randomPollenDeposition; }
-        public int OffsetID() { return offsetID; }
-        public double TotalAirAmount() { return totalAirAmount; }
-        public int DistributionID() { return distributionID; }
+        public double[] RandomYearDeposition{get { return randomPollenDeposition; }}
+        public int OffsetID {get{ return offsetID; }}
+        public double TotalAirAmount{get { return totalAirAmount; }}
+        public int DistributionID {get { return distributionID; }}
 
 
 

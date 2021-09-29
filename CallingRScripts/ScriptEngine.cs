@@ -17,15 +17,15 @@ namespace LepiX.CallingRScripts
 
         public static void Setup()
         {
-            StartupParameter parameter = new StartupParameter();
-            REngine.SetEnvironmentVariables();
-            rEngine = REngine.GetInstance(null, true, parameter);
+            //StartupParameter parameter = new StartupParameter();
+            //REngine.SetEnvironmentVariables();
+            //rEngine = REngine.GetInstance(null, true, parameter);
 
         }
         
         public static void Dispose()
         {
-            rEngine.Dispose();
+            //rEngine.Dispose();
         }
     }
 }
