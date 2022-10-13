@@ -1,8 +1,14 @@
-﻿using System;
+﻿//================================================================
+//
+// Phillip Papastefanou, Lorenz Fahse; 01-10-2022
+// Federal Agency for Nature Conservation (BfN), Germany 
+//
+//================================================================
+using System;
 
 namespace LepiX.InputParameters
 {
-    public class PSSDOutput  :Methods
+    public class PSSDOutput : Methods
     {
         private bool fitSuccessfull;
         private double ssdSlope;

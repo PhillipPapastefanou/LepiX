@@ -1,4 +1,11 @@
-﻿using System;
+﻿//================================================================
+//
+// Phillip Papastefanou, Lorenz Fahse; 01-10-2022
+// Federal Agency for Nature Conservation, Germany (BfN)
+//
+//================================================================
+
+using System;
 
 
 namespace LepiX.Core.RandomGenerators

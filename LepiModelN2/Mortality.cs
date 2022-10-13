@@ -1,6 +1,8 @@
 ﻿//================================================================
-// LepiModel: Mortality Class
-// Lorenz Fahse, Phillip Papastefanou, 21-10-2013
+//
+// Phillip Papastefanou, Lorenz Fahse; 01-10-2022
+// Federal Agency for Nature Conservation, Germany (BfN)
+//
 //================================================================
 
 using System;
@@ -31,16 +33,9 @@ namespace LepiX.Core
         //------------------------------------------------------------ 
         double[] depositionData;
         Individual[] individuals;
-
         double[] totalEstimatedExpositionAmount;
-
         double[][] mortalityPerPopulation;
-
-
         double totalExposedAmount;
-
-
-
 
 
         //------------------------------------------------------------
@@ -57,10 +52,16 @@ namespace LepiX.Core
         //------------------------------------------------------------
         //  Constructor
         //------------------------------------------------------------
+
+
         public Mortality(int pID):base(pID)
         {
             this.pID = pID; 
         }
+
+        //------------------------------------------------------------
+        //  Public functions
+        //------------------------------------------------------------
 
         public override void Initialise(Scenario scenario)
         {
@@ -158,7 +159,7 @@ namespace LepiX.Core
         // Private Methods
         //------------------------------------------------------------ 
         //------------------------------------------------------------
-        // Exposition part
+        // Exposition 
         //------------------------------------------------------------ 
 
         private double[] CalclulateExposition(Individual individual)

@@ -1,4 +1,11 @@
-﻿using System;
+﻿
+//================================================================
+//
+// Phillip Papastefanou, Lorenz Fahse; 01-10-2022
+// Federal Agency for Nature Conservation (BfN), Germany 
+//
+//================================================================
+using System;
 using System.Windows.Forms;
 
 using LepiX.PropertyGrid.Model;
@@ -12,9 +19,6 @@ namespace LepiX.PropertyGrid
 {
     class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main(string[] args)
         {

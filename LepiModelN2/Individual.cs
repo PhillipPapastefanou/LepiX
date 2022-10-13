@@ -1,8 +1,9 @@
 ﻿//================================================================
-// LepiModel: Insect Model
-// Lorenz Fahse, Phillip Papastefanou, 21-10-2013
+//
+// Phillip Papastefanou, Lorenz Fahse; 01-10-2022
+// Federal Agency for Nature Conservation (BfN), Germany 
+//
 //================================================================
-
 using System;
 
 namespace LepiX.Core
