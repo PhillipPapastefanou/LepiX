@@ -17,3 +17,6 @@ license.
 
  * The automated postprocessing scripts based on RDotNet do currently not work with R versions greater than 3.6
  * The graphical user interface including the interactive manual display currently only works on Microsoft Windows.
+
+The model is permanently archived at:\
+[![DOI](https://zenodo.org/badge/411790802.svg)](https://zenodo.org/badge/latestdoi/411790802)
